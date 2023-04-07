@@ -19,7 +19,7 @@ jobs:
   # This workflow contains a single job called "build"
   setup-enviroment:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
      - run: |
          sudo apt-get install -y gcc rubygems cmake
