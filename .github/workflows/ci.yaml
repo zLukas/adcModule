@@ -29,6 +29,6 @@ jobs:
     runs-on: self-hosted
     steps:
       - run: | 
-          cd tests/adcModule
+          cd unit-tests
           ceedling test:all
 
