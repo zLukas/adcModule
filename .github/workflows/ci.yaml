@@ -24,4 +24,8 @@ jobs:
           cd build
           cmake ..
           make
+    unit-tests:
+      runs-on: self-hosted
+      steps:
+        - run: ceedling test:all
 
