@@ -25,7 +25,10 @@ jobs:
           cmake ..
           make
   unit-tests:
-      runs-on: self-hosted
-      steps:
-        - run: ceedling test:all
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - run: | 
+          cd tests/adcModule
+          ceedling test:all
 
