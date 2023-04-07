@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Setup runner
 
 # Controls when the workflow will run
 on:
@@ -16,14 +16,12 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  setup-enviroment:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
      - run: |
          sudo apt-get install -y gcc rubygems
-         gem install ceedling
-         ceedling 
-                
-     
-    
+         sudo gem install ceedling
+         ceedling
+         
