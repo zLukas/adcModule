@@ -16,5 +16,9 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build: 
-    run: echo "cmake build..."
+    run: |
+      mkdir build 
+      cd build
+      cmake ..
+      make
 
