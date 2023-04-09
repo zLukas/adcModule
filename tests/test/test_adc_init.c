@@ -9,7 +9,7 @@ adc_ts test_adc;
 adc_operation_status_te hw_init_results = ADC_INIT_FAIL;
 
 
-uint8 mock_hw_init(uint8 channels, uint8 resolution, float32, ref_voltage){
+uint8 mock_hw_init(uint8 channels, uint8 resolution, float32 ref_voltage){
     TEST_ASSERT_NOT_EQUAL_INT8(0, channels);
     return hw_init_results;
 }
