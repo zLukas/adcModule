@@ -38,5 +38,5 @@ typedef struct adc_ts{
 }adc_ts;
 
 adc_operation_status_te adc_init(adc_ts* adc, adc_config_ts config);
-adc_operation_status_te adc_raw_read(adc_ts* adc, uint16* data)
+adc_operation_status_te adc_raw_read(adc_ts* adc, uint16* data);
 #endif
