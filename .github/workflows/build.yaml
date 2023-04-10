@@ -15,17 +15,10 @@ on:
       - '*.h'
       - 'CMake**'
       - '*.cmake'
-  pull_request:
-    branches: "main"
-    paths-ignore:
-      - 'tests/**'
-    paths:
-      - 'src/**'
-      - 'inc/**'
-      - '*.c'
-      - '*.h'
-      - 'CMake**'
-      - '*.cmake'
+    pull-request:
+      branches: "main"
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   build:
