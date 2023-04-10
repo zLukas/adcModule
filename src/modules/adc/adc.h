@@ -28,6 +28,7 @@ typedef struct adc_config_ts {
     uint8 num_of_channels;
     float32 ref_voltage;
     out_format data_format;
+    uint16 adc_max_level;
 }adc_config_ts;
 
 typedef struct adc_ts{

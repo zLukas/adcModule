@@ -48,10 +48,12 @@ void test_adc_init_hw_init_return_fail(void){
 void test_adc_init_hw_init_return_ok(void){
     /* arrange */
     test_config.num_of_channels = 1;
+    test_config.resolution = 12;
     hw_init_results = ADC_INIT_OK;
     test_adc.hw_init = mock_hw_init; 
 
     /* act */
     /* assert */
-    TEST_ASSERT_EQUAL((uint8)ADC_INIT_OK , (uint8)adc_init(&test_adc, test_config));   
+    TEST_ASSERT_EQUAL((uint8)ADC_INIT_OK , (uint8)adc_init(&test_adc, test_config));
+    TEST_ASSERT_EQUAL_UINT16(4096,test_adc.config.adc_max_level);
 } 
