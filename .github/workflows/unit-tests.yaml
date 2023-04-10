@@ -7,8 +7,6 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: "main"
-    paths:
-      - 'tests/**'
   pull_request:
       branches: "main"
       types: [ auto_merge_enabled ]
