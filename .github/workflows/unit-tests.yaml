@@ -17,6 +17,7 @@ on:
 jobs:
   unit-tests:
     runs-on: self-hosted
+    needs: build
     steps:
       - run: | 
           cd tests
