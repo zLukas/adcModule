@@ -15,7 +15,7 @@ on:
       - '*.h'
       - 'CMake**'
       - '*.cmake'
-    pull-request:
+    pull_request:
       branches: "main"
       types: [ auto_merge_enabled ]
   # Allows you to run this workflow manually from the Actions tab
