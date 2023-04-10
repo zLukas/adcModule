@@ -8,7 +8,7 @@ on:
     branches:  "main"
     paths-ignore:
       - 'tests/**'
-    path:
+    paths:
       - 'src/**'
       - 'inc/**'
       - '*.c'
@@ -19,7 +19,7 @@ on:
     branches: "main"
     paths-ignore:
       - 'tests/**'
-    path:
+    paths:
       - 'src/**'
       - 'inc/**'
       - '*.c'
