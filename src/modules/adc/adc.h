@@ -7,8 +7,9 @@ typedef enum adc_operation_status_te{
     OK = 0,
     ADC_INIT_FAIL,
     ADC_INIT_OK,
-    ADC_READ_COMPLETE,
+    ADC_READ_OK,
     ADC_READ_FAILED,
+    ADC_VALUE_OVER_LIMIT,
 }adc_operation_status_te;
 
 typedef enum adc_state_te{
@@ -17,19 +18,18 @@ typedef enum adc_state_te{
 
 }adc_state_te;
 
-typedef enum out_format {
-    RAW = 0, 
-    VOLTAGE,
-    PERCENT
-}out_format;
-
 typedef struct adc_config_ts {
     uint8 resolution;
     uint8 num_of_channels;
     float32 ref_voltage;
-    out_format data_format;
     uint16 adc_max_level;
 }adc_config_ts;
+
+typedef struct measurement_ts{
+    uint16 level;
+    float32 voltage;
+    float32 percentage;
+}measurement_ts;
 
 typedef struct adc_ts{
     adc_state_te state;
@@ -39,5 +39,5 @@ typedef struct adc_ts{
 }adc_ts;
 
 adc_operation_status_te adc_init(adc_ts* adc, adc_config_ts config);
-adc_operation_status_te adc_raw_read(adc_ts* adc, uint16* data);
+adc_operation_status_te adc_read(adc_ts* adc, uint16* data);
 #endif
