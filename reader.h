@@ -1,5 +1,5 @@
-#ifndef _ADC_MODULE_H_
-#define _ADC_MODULE_H_
+#ifndef _READER_H_
+#define _READER_H_
 
 #include <stdio.h>
 
