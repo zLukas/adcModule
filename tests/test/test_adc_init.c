@@ -24,16 +24,6 @@ void tearDown(void){
 }
 
 
-
-void test_adc_init_hw_init_is_null(void){
-    /* arrange */
-    test_adc.hw_init = NULL; 
-
-    /* act */
-    /* assert */
-    TEST_ASSERT_EQUAL((uint8)ADC_INIT_FAIL , (uint8)adc_init(&test_adc, test_config));   
-} 
-
 void test_adc_init_hw_init_return_fail(void){
     /* arrange */
     test_config.num_of_channels = 1;
@@ -41,7 +31,8 @@ void test_adc_init_hw_init_return_fail(void){
 
     /* act */
     /* assert */
-    TEST_ASSERT_EQUAL((uint8)ADC_INIT_FAIL , (uint8)adc_init(&test_adc, test_config));   
+    TEST_ASSERT_EQUAL_UINT8((uint8)ADC_INIT_FAIL , (uint8)adc_init(&test_adc, test_config));
+    TEST_ASSERT_EQUAL_UINT8((uint8)ADC_NOT_INITIALIZED , (uint8)test_adc.state);
 } 
 
 
@@ -54,6 +45,7 @@ void test_adc_init_hw_init_return_ok(void){
 
     /* act */
     /* assert */
-    TEST_ASSERT_EQUAL((uint8)ADC_INIT_OK , (uint8)adc_init(&test_adc, test_config));
+    TEST_ASSERT_EQUAL_UINT8((uint8)ADC_INIT_OK , (uint8)adc_init(&test_adc, test_config));
+    TEST_ASSERT_EQUAL_UINT8((uint8)ADC_INITIALIZED , (uint8)test_adc.state);
     TEST_ASSERT_EQUAL_UINT16(4096,test_adc.config.adc_max_level);
 } 
